@@ -1,4 +1,4 @@
-# Bunch of Java Codes
+# Information about this project
 My name is Marvin Bernard i am studying at Durham College learning about how to code in java.
 
 
