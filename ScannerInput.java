@@ -2,7 +2,7 @@
 
 import java.util.Scanner;  // Import the Scanner class
 
-class Main {
+public class ScannerInput {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);  // Create a Scanner object
     System.out.println("Enter username");
