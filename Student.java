@@ -1,35 +1,61 @@
+
 public class Student {
-    private String name;
+    private String firstName;
+    private String lastName;
     private int age;
 
-    public Student(String n, int a) {
-        this.name = n;
-        this.age = a;
+    // Constructor to take both first name and last name
+    public Student(String firstName, String lastName, int age) {
+        if (lastName == null || lastName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Last name is required");
+        }
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        // Check if age is within the valid range
+        if (age < 0 || age > 100) {
+            throw new IllegalArgumentException("Age must be between 0 and 100");
+        }
+        this.age = age;
     }
 
-    public String getName() {
-        return this.name;
+    // Constructor with only name and default age
+    public Student(String firstName) {
+        this.firstName = firstName;
+        this.age = 0; // or any default value
     }
 
+    // Getter and setter methods for firstName
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    // Getter and setter methods for lastName
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        if (lastName == null || lastName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Last name is required");
+        }
+        this.lastName = lastName;
+    }
+
+    // Getter and setter methods for age
     public int getAge() {
-        return this.age;
+        return age;
     }
 
-    public void setName(String n) {
-        this.name = n;
-    }
-
-    public void setAge(int a) {
-        this.age = a;
-    }
-
-    public static void main(String[] args) {
-        Student b = new Student("Bob", 21);
-        System.out.println("The name of the student is " + b.getName() + " and the age is " + b.getAge());
-        
-        // Changing the name and age using the setter methods
-        b.setName("Alice");
-        b.setAge(19);
-        System.out.println("The updated name of the student is " + b.getName() + " and the age is " + b.getAge());
+    public void setAge(int age) {
+        // Check if age is within the valid range
+        if (age < 0 || age > 100) {
+            throw new IllegalArgumentException("Age must be between 0 and 100");
+        }
+        this.age = age;
     }
 }
